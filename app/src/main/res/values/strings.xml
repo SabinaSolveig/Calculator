@@ -19,9 +19,5 @@
     <string name="_Clear">C</string>
     <string name="_ToggleSign">+/-</string>
     <string name="_Percent">%</string>
-    <string name="_Del">!--</string>
-
-
-
-
+    <string name="_BackSpace">BS</string>
 </resources>
