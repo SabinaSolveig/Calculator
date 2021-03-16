@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.button7,
                 R.id.button8,
                 R.id.button9
-		};
+        };
 
         int[] actionsIds = new int []{
                 R.id.buttonAdd,
@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         OnClickListener numberButtonClickListener = view -> {
             calculator.onNumPressed(view.getId());
+
+            operation.setText(calculator.getOperation());
             text.setText(calculator.getText());
         };
 
@@ -68,9 +70,4 @@ public class MainActivity extends AppCompatActivity {
             findViewById(actionsIds[i]).setOnClickListener(actionButtonClickListener);
         }
     }
-
-
-
-
-
 }
