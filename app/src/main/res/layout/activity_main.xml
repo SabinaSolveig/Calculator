@@ -11,7 +11,7 @@
         android:id="@+id/operation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="@dimen/textSize"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -24,15 +24,17 @@
         android:layout_height="100dp"
         android:autofillHints=""
         android:inputType="phone"
+        android:textSize="@dimen/textSize"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/operation" />
 
     <GridLayout
-        android:layout_width="348dp"
-        android:layout_height="342dp"
+        android:layout_width="369dp"
+        android:layout_height="354dp"
         android:layout_gravity="center"
         android:columnCount="4"
+        android:theme="@style/MyStyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -41,129 +43,147 @@
         app:layout_constraintVertical_bias="0.23"
         tools:ignore="MissingConstraints">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_Clear" />
+            app:backgroundTint="@color/purple_400"
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_Clear"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonToggleSign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_ToggleSign" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_ToggleSign"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonPercent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="2"
-            android:text="@string/_Percent" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_Percent"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonBackSpace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_BackSpace" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_BackSpace"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_7" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_7"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_8" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_8"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_9" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_9"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonDiv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_Div" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_Div"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_4" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_4"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_5" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_5"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_6" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_6"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonMul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_Mul" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_Mul"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_1" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_1"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_2" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_2"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_3" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_3"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonSub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_Sub" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_Sub"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_0" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_0"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonDot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_Dot" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_Dot"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonEqual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_Equal" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_Equal"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_Add" />
+            app:cornerRadius="@dimen/buttonRadius"
+            android:text="@string/_Add"/>
     </GridLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
