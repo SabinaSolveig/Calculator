@@ -20,11 +20,9 @@
     <string name="_ToggleSign">+/-</string>
     <string name="_Percent">%</string>
     <string name="_BackSpace">BS</string>
-    <string name="my_cool_style">My Style</string>
-    <string name="material_light">Material light</string>
-    <string name="material_light_action_bar_dark">Material light action bar dark</string>
-    <string name="material_dark">Material dark</string>
-
-
-
+    <string name="_Return">Перейти к приложению</string>
+    <string name="_buttonChooseTheme">Выбрать тему приложения</string>
+    <string name="red_style">Red Style</string>
+    <string name="marine_style">Marine Style</string>
+    <string name="midnight_style">Midnight Style</string>
 </resources>
