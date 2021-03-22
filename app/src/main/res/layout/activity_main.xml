@@ -181,33 +181,15 @@
             app:cornerRadius="@dimen/buttonRadius" />
     </GridLayout>
 
-    <RadioGroup
-        android:id="@+id/radioButtons"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonChooseTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+        android:text="@string/_buttonChooseTheme"
+        app:cornerRadius="@dimen/buttonRadius"
+        tools:ignore="MissingConstraints" />
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/radioButtonRedStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/red_style" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/radioButtonMarineStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/marine_style" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/radioButtonMidnightStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/midnight_style" />
-    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

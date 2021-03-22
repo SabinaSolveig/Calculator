@@ -3,6 +3,7 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,18 +14,32 @@ import android.widget.TextView;
 
 import com.google.android.material.radiobutton.MaterialRadioButton;
 
-public class MainActivity extends ChoosingThemeActivity {
+public class MainActivity extends AppCompatActivity {
 
     private CalculatorLogics calculator;
     private TextView text;
     private TextView operation;
 
+    private static final int REQUEST_CODE_SETTING_ACTIVITY = 99;
+    private static final String NAME_SHARED_PREFERENCE = "MAIN";
+    private static final String APP_THEME = "APP_THEME";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        setTheme(getAppTheme(R.style.RedStyle));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initThemeChooser();
+        Button buttonChooseTheme = findViewById(R.id.buttonChooseTheme);
+        buttonChooseTheme.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent runChoosingTheme = new Intent(MainActivity.this, ChoosingThemeActivity.class);
+                startActivityForResult(runChoosingTheme, REQUEST_CODE_SETTING_ACTIVITY);
+            }
+        });
 
         int[] numberIds = new int[]{
                 R.id.button0,
@@ -79,21 +94,23 @@ public class MainActivity extends ChoosingThemeActivity {
         }
     }
 
-    private void initThemeChooser() {
-        initRadioButton(findViewById(R.id.radioButtonRedStyle),
-                RedStyle);
-        initRadioButton(findViewById(R.id.radioButtonMarineStyle),
-                MarineStyle);
-        initRadioButton(findViewById(R.id.radioButtonMidnightStyle),
-                MidnightStyle);
-        RadioGroup rg = findViewById(R.id.radioButtons);
-        ((MaterialRadioButton) rg.getChildAt(getCodeStyle(RedStyle))).setChecked(true);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode != REQUEST_CODE_SETTING_ACTIVITY) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+
+        if (resultCode == RESULT_OK) {
+            recreate();
+        }
     }
 
-    private void initRadioButton(View button, final int codeStyle) {
-        button.setOnClickListener(v -> {
-            setAppTheme(codeStyle);
-            recreate();
-        });
+    protected int getAppTheme(int codeStyle) {
+        return ChoosingThemeActivity.codeStyleToStyleId(getCodeStyle(codeStyle));
+    }
+
+    protected int getCodeStyle(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NAME_SHARED_PREFERENCE, MODE_PRIVATE);
+        return sharedPref.getInt(APP_THEME, codeStyle);
     }
 }
